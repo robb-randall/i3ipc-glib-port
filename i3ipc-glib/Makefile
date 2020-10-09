@@ -11,13 +11,11 @@ COMMENT=	A C interface library to i3wm
 LICENSE=		GPLv3
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 
-OPTIONS_DEPENDS=	GLIB
-OPTIONS_SINGLE=	X11
-OPTIONS_SINGL_X11=	LIBXCB
-
-BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc \
+BUILD_DEPENDS=	glib20:devel/glib20
 		gobject-introspection:devel/gobject-introspection \
+		gtk-doc:textproc/gtk-doc \
 		json-glib:devel/json-glib \
+		libxcb:x11/libxcb \
 		xcb-proto:x11/xcb-proto
 
 USES=	gmake pkgconfig xorg
