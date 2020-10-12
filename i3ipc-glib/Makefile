@@ -11,20 +11,18 @@ COMMENT=	A C interface library to i3wm
 LICENSE=		GPLv3
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	glib20:devel/glib20
+BUILD_DEPENDS=	glib:devel/glib \
 		gobject-introspection:devel/gobject-introspection \
 		gtk-doc:textproc/gtk-doc \
 		json-glib:devel/json-glib \
 		libxcb:x11/libxcb \
 		xcb-proto:x11/xcb-proto
 
-USES=	gmake pkgconfig xorg
+USES=	gmake pkgconfig gettext
 
 EXTRACT_SUFX=	.tar.gz
 DISTFILES=	v${DISTVERSION}${EXTRACT_SUFX}	
 MASTER_SITES=	https://github.com/altdesktop/i3ipc-glib/archive/
-
-USES=	gmake pkgconfig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKE=gmake
