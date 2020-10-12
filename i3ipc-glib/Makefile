@@ -3,7 +3,9 @@
 PORTNAME=	i3ipc-glib
 DISTVERSION=	1.0.1
 CATEGORIES=	x11
-MASTER_SITES=	https://github.com/altdesktop/i3ipc-glib/releases
+MASTER_SITES=	https://github.com/altdesktop/i3ipc-glib/releases/
+EXTRACT_SUFX=	.tar.gz
+DISTFILES=	v${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	robb.randall@gmail.com
 COMMENT=	A C interface library to i3wm
@@ -18,11 +20,10 @@ BUILD_DEPENDS=	glib:devel/glib \
 		libxcb:x11/libxcb \
 		xcb-proto:x11/xcb-proto
 
-USES=	gmake pkgconfig gettext
+USES=		gmake pkgconfig gettext
+PLIST+=		NLS=""
 
-EXTRACT_SUFX=	.tar.gz
-DISTFILES=	v${DISTVERSION}${EXTRACT_SUFX}	
-MASTER_SITES=	https://github.com/altdesktop/i3ipc-glib/archive/
+DISTFILES=	v${DISTVERSION}${EXTRACT_SUFX}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKE=gmake
