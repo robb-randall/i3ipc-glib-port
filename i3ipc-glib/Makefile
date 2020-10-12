@@ -12,8 +12,7 @@ COMMENT=	C interface library to i3wm
 LICENSE=	GPLv3
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	glib:devel/glib \
-		gobject-introspection:devel/gobject-introspection \
+BUILD_DEPENDS=	gobject-introspection:devel/gobject-introspection \
 		gtk-doc:textproc/gtk-doc \
 		json-glib:devel/json-glib \
 		libxcb:x11/libxcb \
