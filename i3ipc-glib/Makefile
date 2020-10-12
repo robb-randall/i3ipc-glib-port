@@ -4,13 +4,12 @@ PORTNAME=	i3ipc-glib
 DISTVERSION=	1.0.1
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/altdesktop/i3ipc-glib/releases/
-EXTRACT_SUFX=	.tar.gz
 DISTFILES=	v${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	robb.randall@gmail.com
-COMMENT=	A C interface library to i3wm
+COMMENT=	C interface library to i3wm
 
-LICENSE=		GPLv3
+LICENSE=	GPLv3
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	glib:devel/glib \
@@ -22,8 +21,6 @@ BUILD_DEPENDS=	glib:devel/glib \
 
 USES=		gmake pkgconfig gettext
 PLIST+=		NLS=""
-
-DISTFILES=	v${DISTVERSION}${EXTRACT_SUFX}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKE=gmake
