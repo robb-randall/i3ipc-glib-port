@@ -12,6 +12,9 @@ COMMENT=        C interface library to i3wm
 LICENSE=        GPLv3
 LICENSE_FILE_GPLv3=     ${WRKSRC}/COPYING
 
+ONLY_FOR_ARCHS=	amd64 \
+		i386
+
 USES=		gettext \
 		gmake \
 		gnome \
