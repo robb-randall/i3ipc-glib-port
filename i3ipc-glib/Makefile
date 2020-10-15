@@ -12,26 +12,33 @@ COMMENT=        C interface library to i3wm
 LICENSE=        GPLv3
 LICENSE_FILE_GPLv3=     ${WRKSRC}/COPYING
 
-LIB_DEPENDS=	devel/glib20 \
-		glib.h:devel/glib20 \
-		gprintf.h:devel/glib20 \
-		json-glib.h:devel/json-glib \
-		glib-object.h:devel/gobject-introspection 
+USES=		gettext \
+		gmake \
+		gnome \
+		libtool \
+		pkgconfig
 
-BUILD_DEPENDS=	gobject-introspection:devel/gobject-introspection \
-		gtk-doc:textproc/gtk-doc \
-		json-glib:devel/json-glib \
-		libxcb:x11/libxcb \
-		xcb-proto:x11/xcb-proto
+BUILD_DEPENDS=	autotools>=0:devel/autotools \
+		gobject-introspection>=0:devel/gobject-introspection \
+		gtk-doc>=0:textproc/gtk-doc \
+		json-glib>=0:devel/json-glib \
+		libxcb>=0:x11/libxcb \
+		xcb-proto>=0:x11/xcb-proto
 
-RUN_DEPENDS=    ${BUILD_DEPENDS}
+USES=		gettext \
+		gmake \
+		libtool \
+		pkgconfig
+		
 
-USES=           gmake pkgconfig gettext
-PLIST+=         NLS=""
-OPTIONS_DEFINE=	GLIB
+USE_GNOME+=	glib20
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	MAKE=gmake
-CONFIGURE_ARGS=	--prefix=${DESTDIR}/${GNU_CONFIGURE_PREFIX}
+CONFIGURE_ARGS=	--prefix=${DESTDIR}/${GNU_CONFIGURE_PREFIX} MAKE=${GMAKE}
 CONFIGURE_SCRIPT=	autogen.sh
+
+INSTALL_TARGET=	install-strip
+all:
+	@echo "$CONFIGURE_SCRIPT $CONFIGURE_ARGS"
 
 .include <bsd.port.mk>
