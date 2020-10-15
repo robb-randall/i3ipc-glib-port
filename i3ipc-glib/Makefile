@@ -2,7 +2,7 @@
 
 PORTNAME=       i3ipc-glib
 DISTVERSION=    1.0.1
-CATEGORIES=     x11
+CATEGORIES=     devel
 MASTER_SITES=   https://github.com/altdesktop/i3ipc-glib/archive/
 DISTFILES=      v${DISTVERSION}${EXTRACT_SUFX}
 
