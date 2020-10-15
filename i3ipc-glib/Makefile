@@ -30,7 +30,6 @@ USES=		gettext \
 		libtool \
 		pkgconfig
 		
-
 USE_GNOME+=	glib20
 
 GNU_CONFIGURE=	yes
@@ -38,7 +37,5 @@ CONFIGURE_ARGS=	--prefix=${DESTDIR}/${GNU_CONFIGURE_PREFIX} MAKE=${GMAKE}
 CONFIGURE_SCRIPT=	autogen.sh
 
 INSTALL_TARGET=	install-strip
-all:
-	@echo "$CONFIGURE_SCRIPT $CONFIGURE_ARGS"
 
 .include <bsd.port.mk>
