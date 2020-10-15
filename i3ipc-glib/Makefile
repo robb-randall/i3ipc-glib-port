@@ -25,12 +25,10 @@ BUILD_DEPENDS=	autotools>=0:devel/autotools \
 		libxcb>=0:x11/libxcb \
 		xcb-proto>=0:x11/xcb-proto
 
-USES=		gettext \
-		gmake \
-		libtool \
-		pkgconfig
-		
+LIB_DEPENDS+=	libjson-glib-1.0.so:devel/json-glib
+
 USE_GNOME+=	glib20
+USE_XORG+=	xcb
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${DESTDIR}/${GNU_CONFIGURE_PREFIX} MAKE=${GMAKE}
