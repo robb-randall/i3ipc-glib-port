@@ -7,3 +7,4 @@ include/i3ipc-glib/i3ipc-reply-types.h
 lib/girepository-1.0/i3ipc-1.0.typelib
 libdata/pkgconfig/i3ipc-glib-1.0.pc
 share/gir-1.0/i3ipc-1.0.gir
+lib/libi3ipc-glib-1.0.so
