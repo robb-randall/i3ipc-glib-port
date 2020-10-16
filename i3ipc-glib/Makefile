@@ -19,7 +19,8 @@ USES=		gettext \
 		gmake \
 		gnome \
 		libtool \
-		pkgconfig
+		pkgconfig \
+		xorg
 
 BUILD_DEPENDS=	autotools>=0:devel/autotools \
 		gobject-introspection>=0:devel/gobject-introspection \
